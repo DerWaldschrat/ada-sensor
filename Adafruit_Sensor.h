@@ -46,19 +46,19 @@ typedef enum
 {
   SENSOR_TYPE_ACCELEROMETER         = (1),   /**< Gravity + linear acceleration */
   SENSOR_TYPE_MAGNETIC_FIELD        = (2),
-  SENSOR_TYPE_ORIENTATION           = (3),
+  //SENSOR_TYPE_ORIENTATION           = (3),
   SENSOR_TYPE_GYROSCOPE             = (4),
-  SENSOR_TYPE_LIGHT                 = (5),
+  //SENSOR_TYPE_LIGHT                 = (5),
   SENSOR_TYPE_PRESSURE              = (6),
-  SENSOR_TYPE_PROXIMITY             = (8),
-  SENSOR_TYPE_GRAVITY               = (9),
-  SENSOR_TYPE_LINEAR_ACCELERATION   = (10),  /**< Acceleration not including gravity */
-  SENSOR_TYPE_ROTATION_VECTOR       = (11),
-  SENSOR_TYPE_RELATIVE_HUMIDITY     = (12),
-  SENSOR_TYPE_AMBIENT_TEMPERATURE   = (13),
-  SENSOR_TYPE_VOLTAGE               = (15),
-  SENSOR_TYPE_CURRENT               = (16),
-  SENSOR_TYPE_COLOR                 = (17)
+  //SENSOR_TYPE_PROXIMITY             = (8),
+  //SENSOR_TYPE_GRAVITY               = (9),
+  //SENSOR_TYPE_LINEAR_ACCELERATION   = (10),  /**< Acceleration not including gravity */
+  //SENSOR_TYPE_ROTATION_VECTOR       = (11),
+  //SENSOR_TYPE_RELATIVE_HUMIDITY     = (12),
+  //SENSOR_TYPE_AMBIENT_TEMPERATURE   = (13),
+  //SENSOR_TYPE_VOLTAGE               = (15),
+  //SENSOR_TYPE_CURRENT               = (16),
+  //SENSOR_TYPE_COLOR                 = (17)
 } sensors_type_t;
 
 /** struct sensors_vec_s is used to return a vector in a common format. */
@@ -82,18 +82,18 @@ typedef struct {
 } sensors_vec_t;
 
 /** struct sensors_color_s is used to return color data in a common format. */
-typedef struct {
+/*typedef struct {
     union {
         float c[3];
-        /* RGB color space */
+        /* RGB color space 
         struct {
-            float r;       /**< Red component */
-            float g;       /**< Green component */
-            float b;       /**< Blue component */
+            float r;       /**< Red component 
+            float g;       /**< Green component
+            float b;       /**< Blue component 
         };
     };
-    uint32_t rgba;         /**< 24-bit RGBA value */
-} sensors_color_t;
+    uint32_t rgba;         /**< 24-bit RGBA value
+} sensors_color_t;*/
 
 /* Sensor event (36 bytes) */
 /** struct sensor_event_s is used to provide a single sensor event in a common format. */
@@ -109,16 +109,16 @@ typedef struct
         float           data[4];
         sensors_vec_t   acceleration;         /**< acceleration values are in meter per second per second (m/s^2) */
         sensors_vec_t   magnetic;             /**< magnetic vector values are in micro-Tesla (uT) */
-        sensors_vec_t   orientation;          /**< orientation values are in degrees */
+        //sensors_vec_t   orientation;          /**< orientation values are in degrees */
         sensors_vec_t   gyro;                 /**< gyroscope values are in rad/s */
-        float           temperature;          /**< temperature is in degrees centigrade (Celsius) */
-        float           distance;             /**< distance in centimeters */
-        float           light;                /**< light in SI lux units */
+        //float           temperature;          /**< temperature is in degrees centigrade (Celsius) */
+        //float           distance;             /**< distance in centimeters */
+        //float           light;                /**< light in SI lux units */
         float           pressure;             /**< pressure in hectopascal (hPa) */
-        float           relative_humidity;    /**< relative humidity in percent */
-        float           current;              /**< current in milliamps (mA) */
-        float           voltage;              /**< voltage in volts (V) */
-        sensors_color_t color;                /**< color in RGB component values */
+        //float           relative_humidity;    /**< relative humidity in percent */
+        //float           current;              /**< current in milliamps (mA) */
+        //float           voltage;              /**< voltage in volts (V) */
+        //sensors_color_t color;                /**< color in RGB component values */
     };
 } sensors_event_t;
 
